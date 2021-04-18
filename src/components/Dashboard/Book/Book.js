@@ -14,27 +14,27 @@ const Book = () => {
             .then(data => setService(data));
     }, [])
 
-    const onSubmit = data => {
-        const eventData = {
-            name: data.name,
-            description: data.email,
-            price: data.service
-        };
-    }
+    // const onSubmit = data => {
+    //     const eventData = {
+    //         name: data.name,
+    //         description: data.email,
+    //         price: data.service
+    //     };
+    // }
 
     return (
         <div className="mt-3">
             <h1>Book</h1>
             <div>
-                <h3 className="text-danger">You have selected for {service.name}</h3>
+                <h3 className="text-danger">Your service {service.name}</h3>
                 <p className="text-secondary">Your service charge will be {service.price}</p>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            {/* <form onSubmit={handleSubmit(onSubmit)}>
                 <input name="name" className="form-control w-50" placeholder="Name" ref={register} /><br />
                 <input name="email" className="form-control w-50" placeholder="Email" ref={register} /><br />
                 <input name="service" className="form-control w-50" placeholder="Service name" ref={register} /><br />
                 <input className="btn btn-primary mb-2" type="submit" />
-            </form>
+            </form> */}
             <div>
                 <PaymentProcess service={service} />
             </div>
