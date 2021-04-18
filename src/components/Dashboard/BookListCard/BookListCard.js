@@ -1,13 +1,14 @@
 import React from 'react';
 
-const BookListCard = () => {
+const BookListCard = ({ service }) => {
+    console.log(service.service.image);
     return (
-        <div className="col-md-4 pb-5  d-flex justify-content-center">
-            <div className="card" style={{ border: 'none' }}>
-                <img src="" style={{ width: '100px', height: '100px', backgroundColor: 'lightblue' }} className="rounded" alt="" />
-                <div class="card-body">
-                    <h3>Service name</h3>
-                    <p>Service description</p>
+        <div className="col-md-4">
+            <div className="card" style={{backgroundColor: 'lightgray', padding: '10px'}}>
+                <img className="text-center" src={`data:image/png;base64,${service.service.image.img}`} style={{ height: '100px', width: '150px'}} alt="" />
+                <div>
+                <h4 className="mb-3">{service.service.name}</h4>
+                <p className="mb-3">{service.service.description}</p>
                 </div>
             </div>
         </div>

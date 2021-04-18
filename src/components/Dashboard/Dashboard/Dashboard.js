@@ -12,26 +12,26 @@ import {
 import OrderList from '../OrderList/OrderList';
 import Review from '../Review/Review';
 import Book from './../Book/Book';
-import BookList from '../BookList/BookList';
 import ManageService from '../ManageService/ManageService';
+import BookingList from '../BookingList/BookingList';
+import PrivateRoute from './../../PrivateRoute/PrivateRoute';
 
 const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     let { path, url } = useRouteMatch();
 
     return (
-        <div className="row dashboardStyle">
-            <div className="col-md-4">
+        <div className="row">
+            <div className="col-md-2">
                 <Sidebar />
             </div>
-            <div className="col-md-8 dashboardRightSide">
+            <div className="col-md-9">
                 <Switch>
-
-                    <Route path={`${path}/book`}>
+                    <PrivateRoute path={`${path}/book/:id`}>
                         <Book />
-                    </Route>
-                    <Route path={`${path}/bookList`}>
-                        <BookList />
+                    </PrivateRoute>
+                    <Route path={`${path}/bookingList`}>
+                        <BookingList />
                     </Route>
                     <Route path={`${path}/userReview`}>
                         <Review />
@@ -52,7 +52,7 @@ const Dashboard = () => {
 
                     </Route>
                     <Route exact path={`${path}`}>
-                        <AddService />
+                        <BookingList />
                     </Route>
                 </Switch>
             </div>

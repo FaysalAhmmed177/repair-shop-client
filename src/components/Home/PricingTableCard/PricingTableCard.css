@@ -1,0 +1,7 @@
+.pricingCardStyle{
+    box-shadow: 10px 10px 20px gray;
+}
+.pricingCardStyle:hover{
+    transform: translateY(-20px);
+    transition-duration: .5s;
+}

@@ -1,49 +1,51 @@
 import React from 'react';
 import ServiceAreaDetails from '../ServiceAreaDetails/ServiceAreaDetails';
-import smartPhone from '../../../images/smartphone.png';
-import mouse from '../../../images/mouse.png';
-import microchip from '../../../images/microchip.png';
-import gaming from '../../../images/gamming.jpg';
-import dataRecovery from '../../../images/data-recovery.png';
-import lightBulb from '../../../images/lightbulb.png';
+import iphone from '../../../images/iphone.png'
+import samsung from '../../../images/samsung.png'
+import nokia from '../../../images/nokia.png'
+import sony from '../../../images/sony.png'
+import blackberry from '../../../images/blackberry.png'
+import lenovo from '../../../images/lenovo.png'
 
 
 const ServiceArea = () => {
     const servicesArea = [
         {
-            name: "Smartphone Repair",
-            img: smartPhone,
-            description: "If your phone has a broken a front glass, non-responsive buttons, a broken camera we can fix it in house.."
+            name: "Iphone",
+            img: iphone,
+            description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            name: "Computer Repair",
-            img: mouse,
-            description: "Repair technician will work with five general categories of hardware, desktop, computers, laptop, servers."
+            name: "Samsung",
+            img: samsung,
+            description: "Deiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            name: "Electronics Repair",
-            img: microchip,
-            description: "We repair appliances of any manufacturer in the shortest possible time.We give a guarantee.."
+            name: "Nokia",
+            img: nokia,
+            description: "Do eiusmod tempor incididunt ut labore magna aliqua."
         },
         {
-            name: "Console Repair",
-            img: gaming,
-            description: "We will be able to quickly and easily repair your console or your favorite gaming console, trust only professionals.."
+            name: "Sony",
+            img: sony,
+            description: "Sed do eiusmod tempor incididunt ut labore et dolore magna"
         },
         {
-            name: "Electronics Recovery",
-            img: dataRecovery,
-            description: "We are engaged in the restoration of any type of technology , as a result of drawing or overheating are not.."
+            name: "Blackberry",
+            img: blackberry,
+            description: "Eiusmod tempor incididunt ut labore et dolore magna atatem."
         },
         {
-            name: "Check before purchase",
-            img: lightBulb,
-            description: "If you want to bye a use equipment, but you are not sure if it is correct, check it out with us, only quality product.."
+            name: "Lenovo",
+            img: lenovo,
+            description: "Usmod tempor incididunt ut labore et dolore"
         },
     ]
     return (
         <section className="container mt-5">
-            <h2 className="text-center p-5">Our Service Area</h2>
+            <h2 className="text-center pt-5 pb-3">Smartphones that We Work With</h2>
+            <p className="text-secondary text-center">Rem ipsum dolor sit amet, consectetur adipisicing
+            elit, sed do eiusmod tempor incididun</p>
             <div className="row mb-5 ">
                 {
                     servicesArea.map(serviceArea => <ServiceAreaDetails serviceArea={serviceArea}></ServiceAreaDetails>)

@@ -1,4 +1,5 @@
-import React, { useMemo } from "react";
+import React, { useContext, useMemo, useState } from "react";
+import { UserContext } from './../../../App';
 import {
     useStripe,
     useElements,
@@ -9,6 +10,7 @@ import {
 
 
 const useOptions = () => {
+
     const options = useMemo(
         () => ({
             style: {
@@ -32,12 +34,18 @@ const useOptions = () => {
     return options;
 };
 
-const SplitCardForm = () => {
+const SplitCardForm = ({ service }) => {
     const stripe = useStripe();
     const elements = useElements();
     const options = useOptions();
 
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [orderInfo, setOrderInfo] = useState({})
+
     const handleSubmit = async event => {
+
+
+
         event.preventDefault();
 
         if (!stripe || !elements) {
@@ -51,6 +59,22 @@ const SplitCardForm = () => {
             card: elements.getElement(CardNumberElement)
         });
         console.log("[PaymentMethod]", payload);
+
+        const eventData = { loggedInUser, service, payload };
+        console.log(eventData);
+        const url = `https://warm-stream-38271.herokuapp.com/orders`;
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(eventData)
+        })
+            .then(res => {
+                console.log('server side response', res);
+                alert("Order Place successfully")
+            });
     };
 
     return (
