@@ -1,4 +1,4 @@
-Welcome to Repair Shop
+Welcome to Repair Shop.
 This is created for providing you to all types of mobile servicing.You can repair mobile phone by us using this repair shop.You can see our home page all types of our services ares.And also see servicing price.We provide fastest services with resonable price and work with honesty.You can also see What our client testimonials about us.
 
 Now I would like to talk about our apps functionality.
