@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BookListCard = ({ service }) => {
-    console.log(service.service.image);
+    console.log(service.service.image.img);
     return (
         <div className="col-md-4">
             <div className="card" style={{backgroundColor: 'lightgray', padding: '10px'}}>
