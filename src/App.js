@@ -12,6 +12,7 @@ import NotMatch from './components/NotMatch/NotMatch';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import AddService from './components/Dashboard/AddService/AddService';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Navbar from './components/Shared/Navbar/Navbar';
 
 export const UserContext = createContext();
 
@@ -21,6 +22,7 @@ function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
+        <Navbar />
         <Switch>
           <Route exact path="/">
             <Home />
