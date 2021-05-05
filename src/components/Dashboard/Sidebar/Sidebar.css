@@ -1,6 +1,7 @@
 .sidebar{
     background-image: linear-gradient(40deg, #2519d3,#0e515c);
-    position: fixed;
+    position: scroll;
+    height:100%!important;
 }
 .sidebar li{
     margin-bottom: 2em;
